@@ -13,7 +13,9 @@ public class Main {
 //        singleton.setInstance("Sabaton");
 //        System.out.println(singleton.getInstance());
 
-        int[] numbers = {1, 2, 3, 4, 5, 6, 8, 9, 10, 11};
-        System.out.println("Puuttuva luku: " + PuuttuvaLuku.missingNumb(numbers));
+//        int[] numbers = {1, 2, 3, 4, 5, 6, 8, 9, 10, 11};
+//        System.out.println("Puuttuva luku: " + PuuttuvaLuku.missingNumb(numbers));
+
+            System.out.println(KaannaTeksti.Kaanna("Terveppä Terve"));
     }
 }
