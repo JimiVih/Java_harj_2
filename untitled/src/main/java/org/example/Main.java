@@ -18,7 +18,7 @@ public class Main {
         //System.out.println(Satunnainen_Nimi.PalautaNimi());
 
         //## TEHTÄVÄ 13 ##
-        //System.out.println(TiedostoKoko.TiedKoko("C:\\Users\\OMISTAJA\\Desktop"));
+        //System.out.println(TiedostoKoko.TiedKoko("C:\\Users\\[name]\\Documents") + "kb");
 
         //## TEHTÄVÄ 14 ##
 //        int maara = 5;
