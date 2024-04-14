@@ -34,7 +34,29 @@ public class Pankki extends Pankkitili{
 
     }
 
-    public static void PoistaTili(){
+    public static void PoistaTili(String tilinumero){
+        ArrayList<Pankkitili> valiaikainenArr = new ArrayList<>();
+        String poistettuTili = "";
+
+        for (int i = 0; i < tilienMäärä - 1; i++) {
+            if (pankkitilit.get(i).tilinumero == tilinumero){
+                poistettuTili = pankkitilit.get(i).tilinumero;
+                pankkitilit.remove(i);
+            }
+            else{
+                valiaikainenArr.add(pankkitilit.get(i));
+            }
+        }
+        tilienMäärä = pankkitilit.size();
+        System.out.println("Nykyiset tilit:");
+
+        for (int i = 0; i < tilienMäärä - 1; i++) {
+            pankkitilit.add(valiaikainenArr.get(i));
+            System.out.println(pankkitilit.get(i).tilinumero);
+        }
+
+        System.out.println(poistettuTili + " poistettu onnistuneesti");
+
 
     }
 
@@ -53,20 +75,30 @@ public class Pankki extends Pankkitili{
         }
 
         switch (valinta){
+            //NOSTA RAHAA
             case 0:
-                tulostus = tili.Nosta(rahaSumma);
+                tulostus = tili.Nosta(_rahasumma);
                 break;
 
+            //TALLETA RAHAA
             case 1:
-                tulostus = tili.Talleta(rahaSumma);
+                tulostus = tili.Talleta(_rahasumma);
                 break;
 
+            //TULOSTA SALDO
             case 2:
                 tulostus = tili.Tulosta();
                 break;
 
+            //TULOSTA KAIKKI TIEDOT
             case 3:
                 tulostus = tili.TulostaTiedot();
+                break;
+
+            case 4:
+                PoistaTili(_tilinumero);
+                break;
+
         }
         return tulostus;
     }
