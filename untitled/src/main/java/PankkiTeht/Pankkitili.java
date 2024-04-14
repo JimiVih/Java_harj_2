@@ -1,20 +1,24 @@
 package PankkiTeht;
 public class Pankkitili {
-    static String tilinumero = "";
-    int saldo = 0;
-    String omistaja = "";
+    final public String tilinumero;
+    protected int saldo = 0;
+    protected String omistaja = "";
 
+    Pankkitili(String _omistaja, String _tilinumero, int _saldo){
+        tilinumero = _tilinumero;
+        saldo = _saldo;
+        omistaja = _omistaja;
+    }
 
-
-    String Nosta(int nostettavaSumma){
+    public String Nosta(int nostettavaSumma){
         return "Nostit: " + nostettavaSumma + "€ tililtäsi";
     }
 
-    String Talleta(int talletettavaSumma){
+    public String Talleta(int talletettavaSumma){
         return "Talletit: " + talletettavaSumma + "€ tilillesi";
     }
 
-    String Tulosta(){
+    public String Tulosta(){
         return "Tilisi saldo on: " + saldo + "€";
     }
 

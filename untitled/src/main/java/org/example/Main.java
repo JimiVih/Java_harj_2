@@ -1,5 +1,10 @@
 package org.example;
 
+import PankkiTeht.Pankki;
+import PankkiTeht.Pankkitili;
+
+import java.util.Random;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -22,5 +27,18 @@ public class Main {
 
 //        int[] lukuJono = {55, 2, 2};
 //        System.out.println(SuurinSumma.Summa(lukuJono));
+
+        int maara = 5;
+        for (int i = 0; i < maara; i++) {
+            Pankki.LuoTili(Satunnainen_Nimi.PalautaNimi(), 600);
+        }
+        Random rand = new Random();
+        int randTili = rand.nextInt(maara);
+        String tilinumero = Pankki.pankkitilit.get(randTili).tilinumero;
+        System.out.println(Pankki.TulostaTieto(2, tilinumero, 20));
+        System.out.println(Pankki.TulostaTieto(3, tilinumero, 20));
+
+
+
     }
 }

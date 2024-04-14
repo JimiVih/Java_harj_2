@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.util.Random;
 import java.lang.System;
 import java.io.Console.*;
@@ -14,11 +15,14 @@ public class Satunnainen_Nimi {
                  "Kivinen", "Ollila", "Marttinen", "Jaakkola", "heinonen", "Heikkilä"};
 
         Random rand = new Random();
-        int randIntEtu = rand.nextInt(Etunimia.length);
-        int randIntSuku = rand.nextInt(Sukunimia.length);
+        int pituusEtu = Etunimia.length - 1;
+        int pituusSuk = Sukunimia.length - 1;
+
+        int randIntEtu = rand.nextInt(pituusEtu);
+        int randIntSuku = rand.nextInt(pituusSuk);
 
         String Etunimi = Etunimia[randIntEtu];
-        String Sukunimi = Sukunimia[randIntEtu];
+        String Sukunimi = Sukunimia[randIntSuku];
 
         return Etunimi + " " + Sukunimi;
     }
